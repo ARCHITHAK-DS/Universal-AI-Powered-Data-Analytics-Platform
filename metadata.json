@@ -1,0 +1,6 @@
+{
+  "name": "Universal AI Analytics Platform",
+  "description": "A domain-agnostic analytics engine to clean, profile, visualize, and extract AI-powered business insights from any CSV or Excel structured dataset.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
