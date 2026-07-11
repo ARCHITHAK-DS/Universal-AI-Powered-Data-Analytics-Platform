@@ -1,265 +1,179 @@
-# Universal Intelligent Data Analytics Platform (UIDAP)
+<div align="center">
 
-An enterprise-grade, full-stack, domain-agnostic tabular data analytics and profiling platform. Designed to ingest, sanitize, profile, audit, visualize, and extract artificial intelligence business intelligence from structured datasets (CSV, XLS, XLSX). 
+<img src="./assets/uaipap-banner.svg" alt="UAIPAP Banner" width="100%" />
 
-Designed to support industries ranging from Healthcare and Finance to HR, Manufacturing, and Retail, this application pairs a high-performance, client-side math execution engine with server-side AI Copilot facilities backed by Google Gemini.
+<br/>
 
----
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&duration=3000&pause=800&color=8B5CF6&center=true&vCenter=true&width=650&lines=Universal+AI+Powered+Analytics+Platform;Upload.+Clean.+Visualize.+Ask+AI.+Export.;From+Messy+Spreadsheet+to+Boardroom+PDF+%F0%9F%9A%80" alt="Typing SVG" />
 
-## 📖 Table of Contents
-1. [Project Overview](#project-overview)
-2. [Objectives](#objectives)
-3. [Key Features](#key-features)
-4. [Technology Stack](#technology-stack)
-5. [System Architecture](#system-architecture)
-6. [Folder Structure](#folder-structure)
-7. [Module Walkthroughs](#module-walkthroughs)
-   - [Authentication & Role-Based Access Control](#authentication--role-based-access-control)
-   - [Dataset Management & Ingestion](#dataset-management--ingestion)
-   - [Data Cleaning & Comparative Suite](#data-cleaning--comparative-suite)
-   - [Visualization Engine](#visualization-engine)
-   - [AI Insight Generation & Copilot Terminal](#ai-insight-generation--copilot-terminal)
-   - [Report Generation Engine](#report-generation-engine)
-   - [Team Workspace & Sharing](#team-workspace--sharing)
-   - [Admin Operational Console](#admin-operational-console)
-8. [Database Structure & Schema](#database-structure--schema)
-9. [API Overview](#api-overview)
-10. [Installation & Local Deployment](#installation--local-deployment)
-11. [Production Deployment](#production-deployment)
-12. [Troubleshooting](#troubleshooting)
-13. [Screenshots](#screenshots)
-14. [Future Enhancements](#future-enhancements)
-15. [License](#license)
+<br/><br/>
+
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_App-8B5CF6?style=for-the-badge)](https://universal-ai-powered-data-analytics.onrender.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](./LICENSE)
+
+<br/>
+
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=white)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat-square&logo=mongodb&logoColor=white)](https://www.mongodb.com/atlas)
+[![Gemini](https://img.shields.io/badge/AI-Google%20Gemini-4285F4?style=flat-square&logo=google&logoColor=white)](https://ai.google.dev)
+[![Deployed on Render](https://img.shields.io/badge/Deployed_on-Render-46E3B7?style=flat-square&logo=render&logoColor=white)](https://render.com)
+
+</div>
 
 ---
 
-## 🌟 Project Overview
-The **Universal Intelligent Data Analytics Platform (UIDAP)** is a centralized platform for quantitative analysts, systems administrators, and business viewers. UIDAP serves as a secure workbench for loading Excel/CSV worksheets, checking them for structural data-integrity faults (e.g. outliers, missing items, corrupt datatypes), sanitizing them, rendering descriptive charts, and generating analytical report documents automatically. It also features a conversational AI Copilot connected to Google Gemini to answer complex context-aware domain questions directly.
-
-## 🎯 Objectives
-- **Zero-Latency Ingestion**: Perform initial spreadsheet loading and structural metrics compilation in-browser, preventing unnecessary file payload roundtrips.
-- **Data Quality Auditing**: Standardize comparative data profiling (identifying missing values, duplicates, and boundary violations) to support high-integrity decisions.
-- **Robust Role Security**: Implement precise authentication and permission boundaries (Admin, Analyst, Viewer) to prevent unauthorized file or panel modifications.
-- **Domain Adaptation**: Classify uploaded spreadsheets into corporate industries automatically, adapting charts and Key Performance Indicators dynamically.
-- **Cognitive Augmentation**: Embed server-side LLM modules directly into the data analysis lifecycle, giving analysts conversational and automated intelligence.
+### 🔗 [**universal-ai-powered-data-analytics.onrender.com**](https://universal-ai-powered-data-analytics.onrender.com)
+> ⏳ *Runs on a free instance — the first load after inactivity can take 30–50s to wake up. Worth the wait.*
 
 ---
 
-## 🚀 Key Features
+## 🌩️ The Problem
 
-### 🛡️ Secure Session Security
-- Server-side **`bcryptjs`** salted hashing guards registered user credentials.
-- Automatic logging of user logins, devices, browser user-agents, and session durations in the Relational DB.
-- Real-time password complexity tracker on registration (length, uppercase, lowercase, numbers, and symbols).
+Every organization drowns in spreadsheets. Raw exports arrive full of missing cells, duplicate rows, and silent outliers — and before anyone can make a decision, an analyst babysits it through Excel macros, three different chart tools, then emails a PDF around and hopes no one edits the wrong copy.
 
-### 👥 Fine-Grained Role-Based Access Control (RBAC)
-- **Admin**: Inspect registered accounts, edit user roles, toggle account statuses (Active/Inactive), view detailed security audit records, and export system-wide operational reports.
-- **Analyst**: Full read-write privileges. Can ingest files, clean data tables, visualize dimensions, trigger AI insights, collaborate in workspaces, and download PDF reports.
-- **Viewer**: Read-only workspace access. Can interact with shared dashboard tokens but cannot upload, alter, or delete records.
+**UIDAP replaces that entire pipeline with one secure workbench.**
 
-### 📊 Dataset Profiling & Autocleaning
-- Auto-detects columns, schema, types, missing cells, duplicated records, and IQR outliers.
-- One-Click Data Cleaning: Media/Mode imputation for empty cells, duplicate pruning, datatype casting, and Interquartile Range (IQR) outlier truncation.
-- Dynamic *Before-and-After* comparisons showing exact mathematical changes side-by-side.
+Upload a spreadsheet. Watch it get profiled, cleaned, visualized, and interpreted by an AI copilot — then export a boardroom-grade PDF or PPTX before your coffee gets cold.
 
-### 🧠 Gemini-Powered AI Insight & Copilot
-- Connects securely to the Google Gemini API server-side using the `@google/genai` SDK.
-- Compiles exactly 10 distinct, structured corporate findings graded by confidence percentage.
-- Recommends 3 advanced Machine Learning models (Classification, Regression, Clustering) with statistical justifications.
-- Integrates a real-time conversational Copilot terminal to query the spreadsheet context.
+<br/>
 
-### 📈 Multi-Dimensional Visualization Engine
-- Renders responsive interactive data visuals with **Recharts**:
-  - Binned Frequency Histograms for distribution patterns.
-  - Linear Timeline charts for temporal progressions.
-  - Interactive Scatter Plots for correlation studies.
-  - Pearson Correlation Heatmap showing coefficient values.
-- Auto-Industry Classifier: Inspects variables to auto-categorize the workbook into a specific domain (Retail, Finance, HR, Healthcare, Education) and mounts dynamic KPIs.
+<div align="center">
+<img src="https://raw.githubusercontent.com/ARCHITHAK-DS/Universal-AI-Powered-Data-Analytics-Platform/main/assets/readme-banner.svg" alt="Platform Preview" width="90%" />
+</div>
 
-### 🖨️ Document Export Studio
-- Compiles full executive-grade multipage report documents directly from the browser canvas.
-- Multi-Page PDF exports powered by **jspdf** and **html2canvas**, complete with corporate headers, automated pagination (e.g., *Page 1 of 6*), visual index pages, data distribution grids, and formal recommendation/sign-off slots.
-- Direct **PowerPoint (PPTX)** generation using **pptxgenjs** to facilitate board-room presentations.
+<br/>
 
----
+## ✨ Features
 
-## 💻 Technology Stack
+<table>
+<tr>
+<td width="50%">
 
-| Layer | Technology | Purpose |
-| :--- | :--- | :--- |
-| **Frontend UI** | React 19, TypeScript, Tailwind CSS, Lucide Icons | Responsive SPA, modular components, high-contrast Dark UI theme |
-| **Backend API** | Express 4, Node.js, `tsx` compiler, ESBuild | Secure routing, PDF streaming, session guards, and static assets |
-| **Database** | JSON File Relational Engine (server/db.ts) | Thread-safe, transaction-consistent relational storage on disk |
-| **AI Integration** | `@google/genai` (SDK v2) | Server-side LLM processing with Google Gemini |
-| **Spreadsheet Math** | SheetJS (`xlsx`) | Quick, client-side workbook ingestion and binary parsing |
-| **Visualization** | Recharts 3, D3-interpolators | Mathematical plotting and multi-variable heatmaps |
-| **Document Export** | jsPDF, html2canvas, pptxgenjs | Structured multi-page PDF compilation and PowerPoint slides |
+### 📊 Data Intelligence
+- **Auto-Profiling** — instantly flags column types, missing values, duplicates, and IQR-based outliers
+- **One-Click Cleaning** — median/mode imputation, dedup, type casting, with a live before/after diff
+- **Industry Auto-Classifier** — reads your columns and detects Retail, Finance, HR, Healthcare, or Education context, then adapts KPIs
+- **Adaptive Charts** — histograms, timelines, scatter plots, and Pearson correlation heatmaps that reshape per dataset
 
----
+</td>
+<td width="50%">
 
-## ⚙️ System Architecture
-The application is structured as a full-stack, cohesive Single Page Application served by an Express middleware layer.
+### 🧠 AI & Collaboration
+- **Gemini AI Copilot** — ask plain-English questions about your data; it reads schema + stats server-side, not guesses
+- **Report Studio** — one click → paginated, headered PDF or PPTX, generated entirely in-browser
+- **Role-Based Access** — Admin / Analyst / Viewer tiers, bcrypt-hashed credentials, full audit trail
+- **Team Workspaces** — shareable dashboard tokens so a Viewer never touches the raw file
 
-```text
-+-------------------------------------------------------------+
-|                     Client Browser UI                       |
-|  [React 19 Components] <---> [Descriptive Math & SheetJS]  |
-+------------------------------+------------------------------+
-                               | (Restful API Calls)
-                               v
-+-------------------------------------------------------------+
-|                      Express Backend                        |
-|   [Auth Router]       [Dataset Router]      [Admin Console] |
-+------------------------------+------------------------------+
-                               |
-            +------------------+------------------+
-            |                                     |
-            v                                     v
-+-----------------------+               +-----------------------+
-|  Relational DB Store  |               |   Google Gemini AI    |
-| [database-store.json] |               |   (Server-Side API)   |
-+-----------------------+               +-----------------------+
+</td>
+</tr>
+</table>
+
+<br/>
+
+## 🏗️ Architecture
+
+```
+                    ┌──────────────────┐
+   .csv / .xlsx ──▶ │  SheetJS Parser   │   (runs in-browser — zero upload latency)
+                    └────────┬─────────┘
+                             ▼
+                 ┌───────────────────────┐        ┌─────────────────────┐
+                 │  Client Math Engine   │◀──────▶│  Recharts Renderer  │
+                 └───────────┬───────────┘        └─────────────────────┘
+                             │  (API calls for AI + reports + auth)
+                             ▼
+        ┌─────────────────────────────────────────────────────┐
+        │                 Express + Node.js API                │
+        │  ┌───────────┐   ┌──────────────┐   ┌─────────────┐  │
+        │  │ Auth (RBAC)│   │  Projects    │   │   Admin     │  │
+        │  └─────┬──────┘   └──────┬───────┘   └──────┬──────┘  │
+        └────────┼─────────────────┼──────────────────┼─────────┘
+                  ▼                 ▼                  ▼
+          ┌──────────────┐  ┌───────────────┐  ┌──────────────────┐
+          │ MongoDB Atlas│  │ Google Gemini │  │ jsPDF / pptxgenjs │
+          │ (or JSON DB) │  │               │  │                  │
+          └──────────────┘  └───────────────┘  └──────────────────┘
 ```
 
----
+**Stack at a glance**
 
-## 🗂️ Folder Structure
-```text
-├── database-store.json          # Core persistent database store file
-├── requirements.txt             # Python dependencies (for companion scripts/Streamlit)
-├── package.json                 # Node.js dependencies & environment build commands
-├── server.ts                    # Main API entrypoint and static assets server
-├── server/
-│   └── db.ts                    # DB Controller implementing CRUD models on database-store.json
-├── src/
-│   ├── App.tsx                  # Main entrypoint containing UI routes and shell tabs
-│   ├── firebase.ts              # Optional Firebase Client Config integration
-│   ├── index.css                # Global CSS stylesheet compiling Tailwind CSS utility classes
-│   ├── main.tsx                 # Standard React mounting file
-│   ├── types.ts                 # Centralized, strictly typed TypeScript schemas
-│   ├── components/              # Modular UX Components
-│   │   ├── ActivityLogsPanel.tsx   # Admin: Login session auditing logs
-│   │   ├── DashboardSharing.tsx    # Workspace: Tokenized cryptographic dashboard shares
-│   │   ├── DatasetHistory.tsx      # Analyst: File versions and audit history
-│   │   ├── MyAccount.tsx           # Security: Profile settings and password rotation
-│   │   ├── ProjectsManager.tsx     # Analyst: Projects and workbook configurations
-│   │   ├── SystemSettings.tsx      # Admin: Global application environment flags
-│   │   └── TeamWorkspace.tsx       # Workspace: Cooperative multi-member rooms
-│   └── utils/
-│       └── dataEngine.ts        # Client-side statistical engine (outliers, IQR, imputation)
-└── uploads/                     # Physical storage folder for uploaded spreadsheet assets
-```
+| Layer | Tech |
+|---|---|
+| Frontend | React 19 · TypeScript · Tailwind CSS · Recharts · Framer Motion · Lucide Icons |
+| Backend | Express 4 on Node.js · bundled with esbuild · run via `tsx` |
+| AI | Google Gemini (`@google/genai`) |
+| Database | MongoDB Atlas (falls back to local JSON store if unset) |
+| Auth | Firebase (optional) + bcrypt-hashed credentials |
+| Exports | jsPDF + html2canvas (PDF) · pptxgenjs (PPTX) · SheetJS (XLSX parsing) |
 
----
+<br/>
 
-## 📦 Database Structure & Schema
+## 🚀 Quick Start
 
-The Relational DB Store represents its schema cleanly in `/database-store.json`. The key relational records are managed by the `RelationalDB` class inside `server/db.ts`:
-
-- **`users`**: Store profiles including usernames, emails, hashed passwords (`bcryptjs`), system roles, and status flags.
-- **`loginHistory`**: Session auditing log tracking user IDs, device profiles, browsers, login, and logout timestamps.
-- **`datasets`**: Files uploaded by Analysts and Admins with sizing, storage paths, and version counts.
-- **`projects`**: Saved spreadsheet workspaces, capturing raw and cleaned datasets, statistical matrix configurations, and auto-generated data insights.
-- **`teamWorkspaces`**: Multi-member collaborative structures pairing owners to user lists.
-- **`sharedDashboards`**: Cryptographic tokens mapping to specific dashboard resources with expiry dates.
-- **`activityLogs`**: Universal event logger tracking operational changes.
-
----
-
-## 👤 Default Credentials & Setup
-
-The local relational storage seeds default sandbox profiles on launch to support immediate testing.
-
-| Account Role | Username | Email | Plaintext Password |
-| :--- | :--- | :--- | :--- |
-| **Global Admin** | `admin` | `admin123@gmail.com` | `admin@123` |
-| **Analyst Profile** | `archu` | `architha.k11@gmail.com` | `Archu123!` |
-
----
-
-## 🛠️ Installation & Local Deployment
-
-### Prerequisites
-- Node.js LTS (version 18 or above recommended)
-- NPM (version 9 or above)
-
-### 1. Ingest Dependencies
 ```bash
+# Clone
+git clone https://github.com/ARCHITHAK-DS/Universal-AI-Powered-Data-Analytics-Platform.git
+cd Universal-AI-Powered-Data-Analytics-Platform
+
+# Install
 npm install
-```
 
-### 2. Configure Environment Secrets
-Create a `.env` file in the root workspace folder:
-```env
-GEMINI_API_KEY="AIzaSyYourGeminiApiKeyHere"
-```
+# Configure
+cp .env.example .env
+# fill in GEMINI_API_KEY, MONGODB_URI, and any VITE_FIREBASE_* keys
 
-### 3. Run Development Server
-```bash
+# Run
 npm run dev
 ```
-The application will boot on port **`3000`**. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
----
-
-## 🚀 Production Deployment
-
-### Compilation Phase
-Compile the React application using Vite and bundle the server using esbuild:
+Build & run for production:
 ```bash
 npm run build
+npm start
 ```
-This produces:
-- `/dist` - Optimized frontend assets.
-- `/dist/server.cjs` - Compiled and optimized backend server.
 
-### Start Production Server
-```bash
-npm run start
-```
-The server will boot in high-performance mode on port **`3000`** with standard Node.js execution.
+<br/>
 
----
+## 🔑 Environment Variables
 
-## 🔌 API Overview
+| Variable | Purpose | Required? |
+|---|---|---|
+| `GEMINI_API_KEY` | Server-side key powering the AI copilot & insight generation | ✅ |
+| `MONGODB_URI` | MongoDB Atlas connection string — enables persistent storage | Recommended for production |
+| `MONGODB_DB_NAME` | Database name (defaults to `uidap`) | Optional |
+| `VITE_FIREBASE_API_KEY` / `VITE_FIREBASE_*` | Firebase client config, if using Firebase Auth | Optional |
 
-All API endpoints are prefixed with `/api` and are guarded where necessary by active session authentication checks.
+> Without `MONGODB_URI`, the app falls back to a local JSON file — fine for local dev, but data won't persist across deploys on most hosts.
 
-### Authentication & Profiles
-- `POST /api/auth/login` - Authenticates user. Writes login history and starts session.
-- `POST /api/auth/register` - Registers a new user. Performs strength complexity checks.
-- `POST /api/auth/logout` - Terminates active session and records logout timestamp.
-- `POST /api/profile/update` - Modifies full name, email, or visual avatar selection.
-- `POST /api/profile/change-password` - Updates old passwords following complexity guidelines.
+<br/>
 
-### Admin Facilities
-- `GET /api/admin/users` - Fetches all registered system users.
-- `POST /api/admin/users/update-role` - Alters user privilege role (Viewer/Analyst/Admin).
-- `POST /api/admin/users/update-status` - Suspends or reactivates accounts.
-- `POST /api/admin/users/edit` - Edits user credentials directly from the control panel.
-- `POST /api/admin/users/delete` - Permanently deletes an account.
-- `GET /api/admin/activity-logs` - Pulls comprehensive security audit trails.
-- `GET /api/admin/stats` - Retreives global DB statistics.
-- `GET /api/admin/reports` - Fetches historical PDF and CSV audit logs.
-- `POST /api/admin/reports/generate` - Generates a comprehensive system audit PDF report.
+## 🗺️ Roadmap
 
-### Workspaces & Dashboards
-- `GET /api/workspaces` - Fetches user-accessible collaborative rooms.
-- `POST /api/workspaces/create` - Instantiates a new workspace with custom ownership.
-- `POST /api/workspaces/invite` - Adds a team member into a workspace via their username.
-- `GET /api/shares/list` - Pulls active tokenized shared dashboards.
-- `POST /api/shares/create` - Creates a cryptographic sharing link with expiry boundaries.
-- `GET /api/shares/public/:token` - Unlocks public viewer dashboard access for shared links.
+- [ ] Migrate remaining local-disk storage (`uploads/`, `exports/`) to object storage
+- [ ] Streaming AI responses in the copilot terminal
+- [ ] Chunked upload support for 500MB+ files
+- [ ] SSO / OAuth login options
 
----
+<br/>
 
-## 🔍 Troubleshooting
+## 🤝 Contributing
 
-- **Server fails on port 3000**: Check if other processes are using port 3000 (`lsof -i :3000`).
-- **AI insights are blank**: Confirm your `GEMINI_API_KEY` is present in your `.env` file and contains valid credentials.
-- **Linter fails on start**: Ensure no unused imports exist in newly added files and that TypeScript compiles successfully using `npm run lint`.
+Issues and PRs are welcome — open an issue first for anything bigger than a small fix, so we can align on approach.
 
----
+<br/>
 
-## 📄 License
-This application is distributed under the [MIT License](LICENSE). Refer to original source files for licensing and copyright details.
+## 📜 License
+
+Distributed under the **MIT License**. See [`LICENSE`](./LICENSE) for full text.
+
+<br/>
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer" width="100%"/>
+
+Built with 🧠 + ☕ by **[Architha K](https://www.linkedin.com/in/architha-k-a22b4539a)**
+
+</div>
