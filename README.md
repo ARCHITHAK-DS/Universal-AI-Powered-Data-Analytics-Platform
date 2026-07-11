@@ -37,14 +37,6 @@ Every organization drowns in spreadsheets. Raw exports arrive full of missing ce
 
 Upload a spreadsheet. Watch it get profiled, cleaned, visualized, and interpreted by an AI copilot — then export a boardroom-grade PDF or PPTX before your coffee gets cold.
 
-<br/>
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/ARCHITHAK-DS/Universal-AI-Powered-Data-Analytics-Platform/main/assets/readme-banner.svg" alt="Platform Preview" width="90%" />
-</div>
-
-<br/>
-
 ## ✨ Features
 
 <table>
